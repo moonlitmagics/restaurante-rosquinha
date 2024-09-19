@@ -9,14 +9,20 @@
 <body>
     
     <header id="header-site-rosquinha">
-        <div id="img-header">
-            <img src="./img/logo.png" alt="Logo" class="logo">
-        </div>
+        <section id="logo">
+            <h2>Rosquinhas CG</h2>
+            <div id="img-header">
+                <img src="./img/logo.png" alt="Logo" class="logo">
+            </div>
+        </section>
+
         <nav id="nav-header">
             <div class="box-btn-rosquinha">
-                <button class="btn-rosquinha">Home</button>
-                <button class="btn-rosquinha">Categoria</button>
+                <button class="btn-rosquinha">Início</button>
+                <button class="btn-rosquinha">Cardápios</button>
                 <button class="btn-rosquinha">Em destaque</button>
+                <button class="btn-rosquinha">Sobre nós</button>
+                <button class="btn-rosquinha">Contato</button>
             </div>
             <div class="search-container">
                 <input type="text" class="search-bar" placeholder="Pesquisar...">
@@ -25,30 +31,66 @@
     </header>
 
 
-    <section id="sec-carousel">
-        <div class="carousel">
-            <div class="nav nav-left">
-                <button>
+    <section id="sec-sobre">
+        <div class=""></div>
 
-                </button>
-            </div>
-        </div>
-        <div class="carousel-content">
-        </div>
-        <div class="nav nav-right">
-            <button>
-
-            </button>
-        </div>
 
     </section>
 
+
+    <section class="sobre-nos">
+        <h2>Bem-vindo ao Mundo Doce de Rosquinhas CG</h2>
+        <h4>Olá e bem-vindo à Rosquinhas CG! Se você está aqui, é porque compartilha conosco a paixão por rosquinhas deliciosas e irresistíveis. Em nossa loja online, oferecemos uma experiência única de compra para os amantes de rosquinhas, com uma ampla variedade de sabores e texturas que prometem adoçar seus momentos e fazer do seu dia uma celebração. Nossa missão é transformar o simples prazer de comer rosquinhas em uma verdadeira experiência gourmet, cheia de alegria e sabor.</h4>
+              
+            <div class="slideshow">
+            <img src="./img/slider1.png" alt="Slider 1" class="active-slide">
+            <img src="./img/slider2.png" alt="Slider 2">
+            <img src="./img/slider3.png" alt="Slider 3">
+            <div class="dots-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+        <script>
+            let slideIndex = 0;
+            const slides = document.querySelectorAll('.slideshow img');
+            const dots = document.querySelectorAll('.dot');
+            function showSlides(n) {
+                slides.forEach((slide, index) => {
+                    slide.style.opacity = "0";
+                    dots[index].classList.remove('active');
+                });
+                slides[n].style.opacity = "1";
+                dots[n].classList.add('active');
+            }
+            function nextSlide() {
+                slideIndex = (slideIndex + 1) % slides.length;
+                showSlides(slideIndex);
+            }
+        function prevSlide() {
+            slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+            showSlides(slideIndex);
+        }
+        function currentSlide(n) {
+        slideIndex = n - 1;
+        showSlides(slideIndex);
+        }
+        
+        setInterval(nextSlide, 4000); //5segundos
+
+        </script>
+    </section>
+
+    <section id="cardapio">
+        <h2> Cardápios:  </h2>
+    </section>
+
     <section id="menu-rosquinhas">
-        <h2> Nosso Cardápio: </h2>
         <div class="menu-grid ">
             <div class="menu-item">
                 <img src="./img/rosquinha1.png" alt="Rosquinha1">
-                <h3>Rosquinha Caseira</h3>
+                <h3>Rosquinha Casa</h3>
                 <p>R$ 5,00</p>
                 <div id="box-cta">
                     <button class="cta-produto">
@@ -56,7 +98,7 @@
                         Comprar
                     </button>
                 </div>
-        </div>
+            </div>
 
         <div class="menu-grid ">
             <div class="menu-item">
@@ -68,23 +110,24 @@
                         <img src="./img/icon-button.png" alt="icone-botao">
                         Comprar
                     </button>
+                </div>
             </div>
         </div>
-        <div class="menu-grid ">
+
             <div class="menu-item">
                 <img src="./img/rosquinha3.png" alt="Rosquinha3">
-                <h3>Rosquinha de Chocolate</h3>
+                <h3>Rosquinha Chocolate</h3>
                 <p>R$ 5,00</p>
                 <div id="box-cta">
                     <button class="cta-produto">
                         <img src="./img/icon-button.png" alt="icone-botao">
                         Comprar
                     </button>
+                </div>
             </div>
-        </div>
-        <div class="menu-grid ">
+
             <div class="menu-item">
-                <img src="./img/rosquinha1.png" alt="Rosquinha1">
+                <img src="./img/rosquinha7.jpg" alt="rosquinha7">
                 <h3>Rosquinha Caseira</h3>
                 <p>R$ 5,00</p>
                 <div id="box-cta">
@@ -94,8 +137,7 @@
                     </button>
                 </div>
             </div>
-        </div>
-        <div class="menu-grid ">
+
             <div class="menu-item">
                 <img src="./img/Rosquinha4.jpg" alt="Rosquinha4">
                 <h3>Rosquinha de Chocolate</h3>
@@ -107,7 +149,32 @@
                     </button>
                 </div>
             </div>
-        </div>
+
+
+            <div class="menu-item">
+                <img src="./img/rosquinha5.png" alt="Rosquinha5">
+                <h3>Rosquinha de Chocolate</h3>
+                <p>R$ 5,00</p>
+                <div id="box-cta">
+                    <button class="cta-produto">
+                        <img src="./img/icon-button.png" alt="icone-botao">
+                        Comprar
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="menu-item">
+                <img src="./img/rosquinha6.png" alt="Rosquinha6">
+                <h3>Rosquinha de Chocolate</h3>
+                <p>R$ 5,00</p>
+                <div id="box-cta">
+                    <button class="cta-produto">
+                        <img src="./img/icon-button.png" alt="icone-botao">
+                        Comprar
+                    </button>
+                </div>
+            </div>
 
 
     </section>
